@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
 namespace CoffeeSnobs.Models
 {
-    public class Reviews
+    public class Review
     {
         [DisplayName("Review")]
         public virtual int ReviewId { get; set; }
