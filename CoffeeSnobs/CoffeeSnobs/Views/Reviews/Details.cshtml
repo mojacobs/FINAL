@@ -1,0 +1,66 @@
+﻿@model CoffeeSnobs.Models.Review
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Review</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Drink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoffeeRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoffeeRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Return)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Return)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReviewId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
