@@ -17,8 +17,8 @@ namespace CoffeeSnobs.Models
                                                         Email = "sally@aol.com",
                                                         Shop = "Nordic Coffee",
                                                         Drink = "Mocha",
-                                                        CoffeeRating = "*",
-                                                        ServRating = "*",
+                                                        CoffeeRating = 1,
+                                                        ServRating = 1,
                                                         Return = "No" });
             context.Reviews.AddOrUpdate(new Review {
                                                         ReviewId = 2,
@@ -26,8 +26,8 @@ namespace CoffeeSnobs.Models
                                                         Email = "joe@aol.com",
                                                         Shop = "Latte On Your Way",
                                                         Drink = "Caramel Latte",
-                                                        CoffeeRating = "**",
-                                                        ServRating = "**",
+                                                        CoffeeRating = 2,
+                                                        ServRating = 2,
                                                         Return = "No" });
             context.Reviews.AddOrUpdate(new Review {
                                                         ReviewId = 3,
@@ -35,8 +35,8 @@ namespace CoffeeSnobs.Models
                                                         Email = "tom@aol.com",
                                                         Shop = "Tullys",
                                                         Drink = "Drip Coffee (Dark Roast)",
-                                                        CoffeeRating = "***",
-                                                        ServRating = "***",
+                                                        CoffeeRating = 3,
+                                                        ServRating = 3,
                                                         Return = "Maybe" });
             context.Reviews.AddOrUpdate(new Review {
                                                         ReviewId = 4,
@@ -44,8 +44,8 @@ namespace CoffeeSnobs.Models
                                                         Email = "kim@aol.com",
                                                         Shop = "Hot Shots Java",
                                                         Drink = "Americano",
-                                                        CoffeeRating = "****",
-                                                        ServRating = "****",
+                                                        CoffeeRating = 4,
+                                                        ServRating = 4,
                                                         Return = "Yes" });
             context.Reviews.AddOrUpdate(new Review {
                                                         ReviewId = 5,
@@ -53,8 +53,8 @@ namespace CoffeeSnobs.Models
                                                         Email = "will@aol.com" ,
                                                         Shop = "Starbucks",
                                                         Drink = "Coconut Macchiato",
-                                                        CoffeeRating = "******",
-                                                        ServRating = "*****",
+                                                        CoffeeRating = 5,
+                                                        ServRating = 5,
                                                         Return = "Yes" });
 
             base.Seed(context);

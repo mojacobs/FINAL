@@ -29,10 +29,10 @@ namespace CoffeeSnobs.Models
         public virtual string Drink { get; set; }
 
         [DisplayName("Coffee Rating:")]
-        public virtual string CoffeeRating{ get; set; }
+        public virtual int CoffeeRating { get; set; }
 
         [DisplayName("Service Rating:")]
-        public virtual string ServRating { get; set; }
+        public virtual int ServRating { get; set; }
 
         [DisplayName("Would coffee snob return?")]
         [Required(ErrorMessage = "Please let the fellow coffee snobs know if you would revist this shop.")]
