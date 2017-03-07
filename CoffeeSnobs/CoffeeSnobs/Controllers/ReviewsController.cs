@@ -46,7 +46,7 @@ namespace CoffeeSnobs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReviewId,Date,Email,Drink,CoffeeRating,ServRating,Return")] Review review)
+        public ActionResult Create([Bind(Include = "ReviewId,Date,Email,Shop,Drink,CoffeeRating,ServRating,Return")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace CoffeeSnobs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ReviewId,Date,Email,Drink,CoffeeRating,ServRating,Return")] Review review)
+        public ActionResult Edit([Bind(Include = "ReviewId,Date,Email,Shop,Drink,CoffeeRating,ServRating,Return")] Review review)
         {
             if (ModelState.IsValid)
             {
