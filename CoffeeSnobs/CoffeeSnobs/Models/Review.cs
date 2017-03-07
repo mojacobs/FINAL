@@ -14,11 +14,15 @@ namespace CoffeeSnobs.Models
 
         [DisplayName("Date Visited:")]
         [Required(ErrorMessage = "Need to specify a date.")]
-        public virtual int Date { get; set; }
+        public virtual string Date { get; set; }
 
         [DisplayName("Coffee Snob:")]
         [DataType(DataType.EmailAddress)]
         public virtual string Email{ get; set; }
+
+        [DisplayName("Coffee Shop:")]
+        [Required(ErrorMessage = "Need to specify a coffee shop.")]
+        public virtual string Shop { get; set; }
 
         [DisplayName("Coffee Drink:")]
         [Required(ErrorMessage = "Need to specify a coffee drink.")]
