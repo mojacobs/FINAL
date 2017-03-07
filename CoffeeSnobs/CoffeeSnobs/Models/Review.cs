@@ -28,13 +28,13 @@ namespace CoffeeSnobs.Models
         [Required(ErrorMessage = "Need to specify a coffee drink.")]
         public virtual string Drink { get; set; }
 
-        [DisplayName("Coffee Rating:")]
+        [DisplayName("Coffee Rating (1-5):")]
         public virtual int CoffeeRating { get; set; }
 
-        [DisplayName("Service Rating:")]
+        [DisplayName("Service Rating (1-5):")]
         public virtual int ServRating { get; set; }
 
-        [DisplayName("Would coffee snob return?")]
+        [DisplayName("Would snob return?")]
         [Required(ErrorMessage = "Please let the fellow coffee snobs know if you would revist this shop.")]
         public virtual string Return { get; set; }
     }
