@@ -1,14 +1,16 @@
 ﻿@model IEnumerable<CoffeeSnobs.Models.Review>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Coffee Snob Reviews";
 }
 
-<h2>Index</h2>
+<h2>Check out what your local coffee snobs are saying!</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@*
+    <p>
+        @Html.ActionLink("Create New", "Create")   // moving this
+    </p>
+*@
 <table class="table">
     <tr>
         <th>
@@ -18,16 +20,13 @@
             @Html.DisplayNameFor(model => model.Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Drink)
+            @Html.DisplayNameFor(model => model.Shop)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CoffeeRating)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ServRating)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Return)
         </th>
         <th></th>
     </tr>
@@ -41,16 +40,13 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Drink)
+            @Html.DisplayFor(modelItem => item.Shop)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CoffeeRating)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ServRating)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Return)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ReviewId }) |

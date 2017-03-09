@@ -7,7 +7,7 @@ using System.Web;
 
 namespace CoffeeSnobs.Models
 {
-    public class CoffeeSnobsDbInitializer : DropCreateDatabaseAlways<CoffeeSnobsDB>
+    public class CoffeeSnobsDbInitializer : DropCreateDatabaseIfModelChanges<CoffeeSnobsDB>
     {
         protected override void Seed(CoffeeSnobsDB context)
         {

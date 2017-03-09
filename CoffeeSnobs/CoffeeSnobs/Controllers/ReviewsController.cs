@@ -48,14 +48,24 @@ namespace CoffeeSnobs.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ReviewId,Date,Email,Shop,Drink,CoffeeRating,ServRating,Return")] Review review)
         {
-            if (ModelState.IsValid)
+            if (User.Identity.IsAuthenticated)
             {
-                db.Reviews.Add(review);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                review.Email = User.Identity.Name;
+                if (ModelState.IsValid)
+                {
+                    db.Reviews.Add(review);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-
             return View(review);
+        }
+
+        public ActionResult FindUserReviews(Review review)
+        {
+            var reviews = db.Reviews.Where(r => r.Reviews.Email == User.Identity.Name);
+
+            return View(reviews.ToList());
         }
 
         // GET: Reviews/Edit/5

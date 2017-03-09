@@ -1,10 +1,10 @@
 ﻿@model CoffeeSnobs.Models.Review
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Review Details";
 }
 
-<h2>Details</h2>
+<h2>Review Details</h2>
 
 <div>
     <h4>Review</h4>
@@ -26,7 +26,7 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
 
-        <dt>
+        <dt>of 
             @Html.DisplayNameFor(model => model.Shop)
         </dt>
 
@@ -69,6 +69,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ReviewId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

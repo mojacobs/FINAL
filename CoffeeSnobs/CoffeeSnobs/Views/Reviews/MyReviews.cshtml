@@ -1,0 +1,58 @@
+﻿@model IEnumerable<CoffeeSnobs.Models.Review>
+
+@{
+    ViewBag.Title = "My Reviews";
+}
+
+<h2>Reviews for @User.Identity.Name</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CoffeeRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServRating)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Shop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoffeeRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServRating)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReviewId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReviewId })
+            </td>
+        </tr>
+    }
+
+</table>
