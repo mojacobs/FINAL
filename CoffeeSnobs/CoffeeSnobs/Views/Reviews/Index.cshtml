@@ -6,21 +6,23 @@
 
 <h2>Check out what your local coffee snobs are saying!</h2>
 
-@*
+@if (User.Identity.IsAuthenticated)
+{
     <p>
-        @Html.ActionLink("Create New", "Create")   // moving this
+        @Ajax.ActionLink("Create New", "Create", "Review", new AjaxOptions { HttpMethod = "GET" }, new { @class = "btn btn-default" } )
     </p>
-*@
+}
+<hr />
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Date)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayNameFor(model => model.Shop)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Shop)
+            @Html.DisplayNameFor(model => model.City)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CoffeeRating)
@@ -37,10 +39,10 @@
             @Html.DisplayFor(modelItem => item.Date)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Email)
+            @Html.DisplayFor(modelItem => item.Shop)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Shop)
+            @Html.DisplayFor(modelItem => item.City)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CoffeeRating)
@@ -49,11 +51,14 @@
             @Html.DisplayFor(modelItem => item.ServRating)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReviewId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReviewId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReviewId })
+            @Html.ActionLink("Details", "Details", new { id = item.ReviewId })
         </td>
     </tr>
 }
 
 </table>
+
+@section Scripts
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}

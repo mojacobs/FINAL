@@ -5,27 +5,29 @@
 }
 
 <h2>Reviews for @User.Identity.Name</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
+<hr />
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Date)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayNameFor(model => model.Shop)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Shop)
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Drink)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CoffeeRating)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ServRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Return)
         </th>
         <th></th>
     </tr>
@@ -37,16 +39,22 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @Html.DisplayFor(modelItem => item.Shop)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Shop)
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Drink)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CoffeeRating)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ServRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Return)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ReviewId }) |

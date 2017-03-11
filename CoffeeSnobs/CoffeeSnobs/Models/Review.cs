@@ -24,6 +24,10 @@ namespace CoffeeSnobs.Models
         [Required(ErrorMessage = "Need to specify a coffee shop.")]
         public virtual string Shop { get; set; }
 
+        [DisplayName("Coffee Shop City:")]
+        [Required(ErrorMessage = "Need to specify a city where coffee shop is.")]
+        public virtual string City { get; set; }
+
         [DisplayName("Coffee Drink:")]
         [Required(ErrorMessage = "Need to specify a coffee drink.")]
         public virtual string Drink { get; set; }

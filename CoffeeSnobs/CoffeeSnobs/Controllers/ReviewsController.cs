@@ -7,12 +7,19 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CoffeeSnobs.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace CoffeeSnobs.Controllers
 {
     public class ReviewsController : Controller
     {
         private CoffeeSnobsDB db = new CoffeeSnobsDB();
+
+        private static List<string> cityList = new List<string>(new[] {
+            "Kingston", "Suquamish", "Poulsbo", "Bainbridge Island",
+            "Silverdale", "Chico", "Bremerton", "Port Orchard", "Seabeck",
+            "Gorst", "Hansville", "Keyport", "Tracyton"});
 
         // GET: Reviews
         public ActionResult Index()
@@ -46,7 +53,7 @@ namespace CoffeeSnobs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReviewId,Date,Email,Shop,Drink,CoffeeRating,ServRating,Return")] Review review)
+        public ActionResult Create([Bind(Include = "ReviewId,Date,Email,Shop,City,Drink,CoffeeRating,ServRating,Return")] Review review)
         {
             if (User.Identity.IsAuthenticated)
             {
@@ -61,9 +68,9 @@ namespace CoffeeSnobs.Controllers
             return View(review);
         }
 
-        public ActionResult FindUserReviews(Review review)
+        public ActionResult MyReviews(Review review)
         {
-            var reviews = db.Reviews.Where(r => r.Reviews.Email == User.Identity.Name);
+            var reviews = db.Reviews.Where(r => r.Email == User.Identity.Name);
 
             return View(reviews.ToList());
         }
@@ -88,7 +95,7 @@ namespace CoffeeSnobs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ReviewId,Date,Email,Shop,Drink,CoffeeRating,ServRating,Return")] Review review)
+        public ActionResult Edit([Bind(Include = "ReviewId,Date,Email,Shop,City,Drink,CoffeeRating,ServRating,Return")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -123,6 +130,16 @@ namespace CoffeeSnobs.Controllers
             db.Reviews.Remove(review);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // AJAX-GET: Ride/CityFill?term=value
+        // Used by Create and Edit Views
+        public ActionResult CityFill(string term)
+        {
+            // pull out the days that match what's been typed in so far
+            var selectedCityValue = cityList.Where(c => term != null && c.Contains(term)).ToList().Select(c => new { value = c });
+
+            return Json(selectedCityValue, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

@@ -6,8 +6,11 @@
     <title>@ViewBag.Title - Coffee Snobs</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href="~/Content/themes/base/jquery-ui.css"
+          rel="stylesheet"
+          type="text/css" />
 </head>
+
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -27,7 +30,7 @@
                     <li>@Html.ActionLink("Coffee Snob Reviews", "Index", "Reviews")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("My Reviews", "FindUserReviews", "Reviews")</li>
+                        <li>@Html.ActionLink("My Reviews", "MyReviews", "Reviews")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
