@@ -1341,7 +1341,7 @@ mark,
   color: #eee8d5;
 }
 .text-primary {
-  color: #b58900;
+  color: #663300;
 }
 a.text-primary:hover,
 a.text-primary:focus {
@@ -1377,7 +1377,7 @@ a.text-danger:focus {
 }
 .bg-primary {
   color: #fff;
-  background-color: #b58900;
+  background-color: #663300;
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
@@ -3119,8 +3119,8 @@ fieldset[disabled] .btn-default.focus {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #b58900;
-  border-color: #b58900;
+  background-color: #663300;
+  border-color: #663300;
 }
 .btn-primary:focus,
 .btn-primary.focus {
@@ -3167,11 +3167,11 @@ fieldset[disabled] .btn-primary:focus,
 .btn-primary.disabled.focus,
 .btn-primary[disabled].focus,
 fieldset[disabled] .btn-primary.focus {
-  background-color: #b58900;
-  border-color: #b58900;
+  background-color: #663300;
+  border-color: #663300;
 }
 .btn-primary .badge {
-  color: #b58900;
+  color: #663300;
   background-color: #ffffff;
 }
 .btn-success {
@@ -4593,7 +4593,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: rgba(255, 255, 255, 0.25);
 }
 .navbar-inverse {
-  background-color: #b58900;
+  background-color: #663300;
   border-color: #826200;
 }
 .navbar-inverse .navbar-brand {
@@ -4879,7 +4879,7 @@ a.label:focus {
   background-color: #425358;
 }
 .label-primary {
-  background-color: #b58900;
+  background-color: #663300;
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
@@ -5144,7 +5144,7 @@ a.thumbnail.active {
   line-height: 20px;
   color: #ffffff;
   text-align: center;
-  background-color: #b58900;
+  background-color: #663300;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -5705,22 +5705,22 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #073642;
 }
 .panel-primary {
-  border-color: #b58900;
+  border-color: #663300;
 }
 .panel-primary > .panel-heading {
   color: #ffffff;
-  background-color: #b58900;
-  border-color: #b58900;
+  background-color: #663300;
+  border-color: #663300;
 }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #b58900;
+  border-top-color: #663300;
 }
 .panel-primary > .panel-heading .badge {
-  color: #b58900;
+  color: #663300;
   background-color: #ffffff;
 }
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #b58900;
+  border-bottom-color: #663300;
 }
 .panel-success {
   border-color: #2aa198;
@@ -6757,7 +6757,7 @@ button.close {
 }
 .text-primary,
 .text-primary:hover {
-  color: #b58900;
+  color: #663300;
 }
 .text-success,
 .text-success:hover {
