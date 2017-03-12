@@ -8,9 +8,7 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    <p>
-        @Ajax.ActionLink("Create New", "Create", "Review", new AjaxOptions { HttpMethod = "GET" }, new { @class = "btn btn-default" } )
-    </p>
+    <p>@Html.ActionLink("Create New Review", "Create", "Reviews", new { area = "" }, new { @class = "btn btn-default" })</p>
 }
 <hr />
 <table class="table">
@@ -58,7 +56,4 @@
 
 </table>
 
-@section Scripts
-{
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-}
+
