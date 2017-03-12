@@ -137,9 +137,19 @@ namespace CoffeeSnobs.Controllers
         public ActionResult CityFill(string term)
         {
             // pull out the days that match what's been typed in so far
-            var selectedCityValue = cityList.Where(c => term != null && c.Contains(term)).ToList().Select(c => new { value = c });
+            var selectedCityValue = cityList.Where(c => term != null && c.Contains(term)).Select(c => new { value = c });
 
             return Json(selectedCityValue, JsonRequestBehavior.AllowGet);
+        }
+
+        public string GetRatingDisplay(int rating)
+        {
+            string display = string.Empty;
+            for (int i=0; i<rating; i++)
+            {
+                display += "☕";
+            }
+            return display;
         }
 
         protected override void Dispose(bool disposing)
