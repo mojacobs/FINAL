@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CoffeeSnobs.Models.Review>
+
+@{
+    ViewBag.Title = "Coffee Snob Reviews";
+}
+
+<h2>Check out what your local coffee snobs are saying!</h2>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>@Html.ActionLink("Create New Review", "Create", "Reviews", new { area = "" }, new { @class = "btn btn-default" })</p>
+}
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CoffeeRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServRating)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @(new string('☕', item.CoffeeRating))
+        </td>
+        <td>
+            @(new string('⭐', item.ServRating))
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.ReviewId })
+        </td>
+    </tr>
+}
+
+</table>
+
+
