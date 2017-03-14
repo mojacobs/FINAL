@@ -16,10 +16,10 @@ namespace CoffeeSnobs.Controllers
     {
         private CoffeeSnobsDB db = new CoffeeSnobsDB();
 
-        private static List<string> cityList = new List<string>(new[] {
+        private static List<string> cityList = new List<string>( new [] {
             "Kingston", "Suquamish", "Poulsbo", "Bainbridge Island",
             "Silverdale", "Chico", "Bremerton", "Port Orchard", "Seabeck",
-            "Gorst", "Hansville", "Keyport", "Tracyton"});
+            "Gorst", "Hansville", "Keyport", "Tracyton"} );
 
         // GET: Reviews
         public ActionResult Index()
@@ -142,14 +142,14 @@ namespace CoffeeSnobs.Controllers
             return Json(selectedCityValue, JsonRequestBehavior.AllowGet);
         }
 
-        public string GetRatingDisplay(int rating)
+        private string GetCoffeeRatingDisplay(int rating)
         {
-            string display = string.Empty;
-            for (int i=0; i<rating; i++)
-            {
-                display += "☕";
-            }
-            return display;
+            return new string('☕', rating);
+        }
+
+        private string GetServRatingDisplay(int rating)
+        {
+            return new string('⭐', rating);
         }
 
         protected override void Dispose(bool disposing)
