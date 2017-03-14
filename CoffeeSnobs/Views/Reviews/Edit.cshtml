@@ -1,0 +1,100 @@
+﻿@model CoffeeSnobs.Models.Review
+
+@{
+    ViewBag.Title = "Edit My Review";
+}
+
+<h2>Edit Review</h2>
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Review</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ReviewId)
+        <!-- Date Visited-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!-- Email (readonly) -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!-- Name of Shop -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Shop, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Shop, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Shop, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!-- City of shop -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.City, new { htmlAttributes = new { data_autocomplete_source = Url.Action("CityFill", "Review"), @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!-- Drink name -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Drink, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Drink, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Drink, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!-- Drink rating -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.CoffeeRating, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CoffeeRating, new { htmlAttributes = new { @class = "form-control", @max = "5", @min = "1" } })
+                @Html.ValidationMessageFor(model => model.CoffeeRating, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!-- Service Rating -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.ServRating, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ServRating, new { htmlAttributes = new { @class = "form-control", @max = "5", @min = "1" } })
+                @Html.ValidationMessageFor(model => model.ServRating, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!-- WWRD? -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Return, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Return, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Return, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/App/ReviewScript.js"></script>
+}
