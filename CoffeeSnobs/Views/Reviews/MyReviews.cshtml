@@ -48,7 +48,7 @@
                 @Html.DisplayFor(modelItem => item.Drink)
             </td>
             <td>
-                @(new string('☕', item.CoffeeRating))
+                @Html.DisplayFor(modelItem => item.CoffeeRating)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ServRating)
